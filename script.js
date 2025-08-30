@@ -12,6 +12,7 @@ let gameOver = false;
 let lives = 3;
 
 function generateBoxes(x) {
+  lives = 3;
   btn.style.display = 'none';
   result.innerHTML = '';
   l.textContent = '❤️'.repeat(lives)
@@ -67,3 +68,4 @@ btn.addEventListener('click', function (){
 
 
 generateBoxes(2);
+
