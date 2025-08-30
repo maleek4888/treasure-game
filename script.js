@@ -20,7 +20,7 @@ function generateBoxes(x) {
     treasureIndex = Math.floor(Math.random()*x);
     for(let i =0; i<x; i++){
   let image = document.createElement('img');
-  image.src ='files/box_closed.png';
+  image.src ='box_closed.png';
   image.classList.add('image');
   image.dataset.index = i ;
   image.addEventListener('click', boxclick);
@@ -36,7 +36,7 @@ function boxclick(event){
   let ind = b.dataset.index;
 
   if (treasureIndex == ind){
-    b.src = 'files/win_box.png';
+    b.src = 'win_box.png';
     gameOver = true;
     winsound.play()
 
@@ -45,7 +45,7 @@ function boxclick(event){
       generateBoxes(currentLevel + 1);
       },2000);
   }else{
-     b.src = 'files/lose_box.png';
+     b.src = 'lose_box.png';
      lives--;
      l.textContent = '❤️'.repeat(lives)
      losesound.play()
@@ -63,6 +63,7 @@ btn.addEventListener('click', function (){
   currentLevel = 1;
   generateBoxes(2)
 })
+
 
 
 generateBoxes(2);
